@@ -291,21 +291,12 @@ a:hover {
   justify-content: center;
 }
 
-.hero-image .app-mockup {
+.app-screenshot {
   width: 100%;
-  max-width: 360px;
-  aspect-ratio: 9/16;
-  background-color: var(--color-bg-muted);
+  max-width: 300px;
   border-radius: 32px;
-  border: var(--border-thin);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-tertiary);
-  font-size: var(--text-sm);
-  text-align: center;
-  padding: var(--space-5);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  display: block;
 }
 
 /* ---- Benefits grid ---- */
