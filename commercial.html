@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Licence — SolarSnap for Businesses</title>
+  <meta name="description" content="SolarSnap Commercial gives solar retailers and installers unlimited assessments with no GPS restrictions. One-time licence purchase via Stripe.">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- Page header -->
+    <section style="padding-bottom: var(--space-6);">
+      <div class="container text-center">
+        <span class="notice">For solar retailers &amp; installers</span>
+        <h1>SolarSnap Commercial Licence</h1>
+        <p style="font-size: var(--text-lg); color: var(--color-text-secondary); margin-top: var(--space-3); max-width: 580px; margin-left: auto; margin-right: auto;">
+          All Premium features, unlimited assessments, and no GPS boundary restrictions — ideal for professionals conducting site surveys.
+        </p>
+      </div>
+    </section>
+
+    <!-- What's included -->
+    <section style="padding-top: var(--space-4); background-color: var(--color-bg-subtle);">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What's included</h2>
+        </div>
+        <div class="benefits-grid" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+          <div class="benefit-card">
+            <div class="benefit-icon">🌍</div>
+            <h3>No GPS restrictions</h3>
+            <p>Assess any UK location without being limited to a single registered home address. Perfect for visiting multiple customer sites.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📊</div>
+            <h3>Full yield estimates</h3>
+            <p>Access the Premium yield report — annual kWh estimate, shading analysis, and savings indication — for every assessment you run.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">♾️</div>
+            <h3>Unlimited assessments</h3>
+            <p>Run as many assessments as you need — no per-assessment fees, no throttling.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛠️</div>
+            <h3>Priority support</h3>
+            <p>Commercial licence holders get priority email support from the SolarSnap team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <h2>Simple, one-off pricing</h2>
+          <p>One licence per user account. No subscription, no annual renewal.</p>
+        </div>
+
+        <div class="pricing-card">
+          <div class="tier-badge" style="background-color: var(--color-primary); color: #fff;">Commercial Licence</div>
+          <div class="pricing-price"><sup>£</sup>TBC</div>
+          <p class="pricing-cadence">One-time purchase · Per user account</p>
+
+          <ul class="tier-feature-list" style="text-align: left; margin-bottom: var(--space-6);">
+            <li>All Premium features</li>
+            <li>No GPS home-location restriction</li>
+            <li>Unlimited site assessments</li>
+            <li>Full yield report on every result</li>
+            <li>Priority support</li>
+            <li>Licence activated instantly in-app</li>
+          </ul>
+
+          <button class="btn-primary" id="checkout-btn" style="width: 100%;" onclick="startCheckout()">
+            Purchase Commercial Licence
+          </button>
+          <p style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-3);">
+            Secure checkout via Stripe. VAT included. Receipt emailed on completion.
+          </p>
+        </div>
+
+        <!-- Success message (shown after Stripe redirect) -->
+        <div id="checkout-success" class="form-success" style="display: none; max-width: 460px; margin: var(--space-6) auto 0; text-align: center;">
+          Payment successful! Your commercial licence has been activated. Check your email for confirmation. Restart the SolarSnap app to apply the change.
+        </div>
+
+        <!-- Error message -->
+        <div id="checkout-error" class="form-error" style="display: none; max-width: 460px; margin: var(--space-6) auto 0; text-align: center;">
+          Something went wrong starting the checkout. Please try again or contact <a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background-color: var(--color-bg-subtle);">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>What happens immediately after I purchase?</summary>
+            <div class="faq-body">
+              As soon as your payment is confirmed, your SolarSnap account is automatically upgraded to Commercial status. You'll receive a confirmation email to the address associated with your account. Simply restart the app and the upgrade will be active.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I activate the licence in the app?</summary>
+            <div class="faq-body">
+              There's nothing manual to do. The licence is linked to your SolarSnap account email. Once your payment is processed, close and reopen the app. The Commercial badge will appear in your account screen and all restrictions will be removed automatically.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is this a subscription?</summary>
+            <div class="faq-body">
+              No. The Commercial licence is a one-time purchase. It does not expire and there are no renewal fees. Updates to the app are included while the app is actively maintained.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I use one licence across multiple devices?</summary>
+            <div class="faq-body">
+              The licence is tied to your SolarSnap account, not your device. You can log in on any device and the Commercial features will be available. It is not designed for shared team accounts — each user should have their own licence.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What if I need multiple licences for my team?</summary>
+            <div class="faq-body">
+              For team or volume licensing, please contact us at <a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a> before purchasing and we'll arrange a suitable package.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I get support?</summary>
+            <div class="faq-body">
+              Commercial licence holders can contact us directly at <a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a> and will receive priority responses. You can also use the <a href="contact.html">support form</a> on this website.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I get a refund?</summary>
+            <div class="faq-body">
+              If you experience a technical issue that prevents you from using the licence, contact us within 14 days of purchase and we'll resolve it or issue a refund. We're unable to offer refunds for change-of-mind once the licence has been activated.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="components.js"></script>
+  <script>
+    // Check for Stripe redirect result
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('success') === '1') {
+        document.getElementById('checkout-success').style.display = 'block';
+        document.getElementById('checkout-btn').style.display = 'none';
+        // Clean the URL
+        history.replaceState({}, '', window.location.pathname);
+      }
+      if (params.get('cancelled') === '1') {
+        history.replaceState({}, '', window.location.pathname);
+      }
+    })();
+
+    async function startCheckout() {
+      const btn = document.getElementById('checkout-btn');
+      const errorEl = document.getElementById('checkout-error');
+      btn.disabled = true;
+      btn.textContent = 'Redirecting to checkout…';
+      errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!res.ok) throw new Error('Server error');
+
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error('No checkout URL returned');
+        }
+      } catch (err) {
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Purchase Commercial Licence';
+      }
+    }
+  </script>
+</body>
+</html>

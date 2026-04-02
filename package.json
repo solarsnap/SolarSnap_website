@@ -1,0 +1,12 @@
+{
+  "name": "solarsnap-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SolarSnap marketing and support website",
+  "dependencies": {
+    "stripe": "^14.21.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

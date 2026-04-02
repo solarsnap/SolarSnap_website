@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Support — SolarSnap</title>
+  <meta name="description" content="Get in touch with the SolarSnap team for support, questions, or feedback about the app.">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <section>
+      <div class="container">
+        <h1>Contact &amp; Support</h1>
+        <p style="font-size: var(--text-lg); color: var(--color-text-secondary); margin-top: var(--space-3); max-width: 480px;">
+          Have a question, spotted a bug, or want to give feedback? We'd love to hear from you.
+        </p>
+
+        <div class="contact-layout mt-8">
+
+          <!-- Contact form -->
+          <div>
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="general">General question</option>
+                  <option value="bug">Report a bug</option>
+                  <option value="purchase">Purchase / billing</option>
+                  <option value="commercial">Commercial licence</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us how we can help…" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" id="submit-btn">Send message</button>
+
+              <div id="form-success" class="form-success">
+                Thanks for getting in touch! We'll get back to you within one to two working days.
+              </div>
+              <div id="form-error" class="form-error">
+                Something went wrong sending your message. Please try again or email us directly at <a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a>.
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact info sidebar -->
+          <aside class="contact-meta">
+
+            <div class="contact-meta-item">
+              <h3>Email us directly</h3>
+              <p><a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a></p>
+            </div>
+
+            <div class="contact-meta-item">
+              <h3>Response time</h3>
+              <p>We aim to respond to all enquiries within one to two working days.</p>
+            </div>
+
+            <div class="contact-meta-item">
+              <h3>Download the app</h3>
+              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-2);">
+                <a href="#" class="store-btn" style="justify-content: center;" aria-label="Download on the App Store">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  <span class="store-btn-label">
+                    <small>Download on the</small>
+                    App Store
+                  </span>
+                </a>
+                <a href="#" class="store-btn" style="justify-content: center;" aria-label="Get it on Google Play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.35.19.75.24 1.15.13l11.57-6.68-2.52-2.52-10.2 9.07zM20.7 10.34l-2.72-1.57-2.83 2.83 2.83 2.83 2.74-1.58c.78-.45.78-1.51-.02-2.51zM2.01 1.4C1.96 1.59 1.94 1.8 1.94 2.03v19.94c0 .23.02.44.07.63l.1.09L13.48 11.3v-.27L2.11 1.31l-.1.09zM13.74 14.07l-2.62-2.62-9.13 9.13c.42.24.91.24 1.35-.02l10.4-6.49z"/></svg>
+                  <span class="store-btn-label">
+                    <small>Get it on</small>
+                    Google Play
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-meta-item">
+              <h3>Privacy</h3>
+              <p><a href="privacy.html">Read our privacy policy</a> to understand how we handle your data.</p>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="components.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('submit-btn');
+      const successEl = document.getElementById('form-success');
+      const errorEl = document.getElementById('form-error');
+
+      successEl.style.display = 'none';
+      errorEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      const formData = {
+        name:    document.getElementById('name').value.trim(),
+        email:   document.getElementById('email').value.trim(),
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value.trim(),
+      };
+
+      // Basic validation
+      if (!formData.name || !formData.email || !formData.message) {
+        errorEl.textContent = 'Please fill in all required fields.';
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (!res.ok) throw new Error('Server error');
+
+        successEl.style.display = 'block';
+        document.getElementById('contact-form').reset();
+        btn.textContent = 'Send message';
+      } catch (err) {
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+      }
+    });
+  </script>
+</body>
+</html>
