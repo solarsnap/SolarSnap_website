@@ -141,7 +141,7 @@ a:hover {
 .site-logo {
   font-size: var(--text-2xl);
   font-weight: var(--font-extrabold);
-  color: var(--color-text-primary);
+  color: var(--color-primary);
   text-decoration: none;
   letter-spacing: -0.5px;
 }
@@ -364,37 +364,46 @@ a:hover {
 .store-btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  background-color: var(--color-text-primary);
+  gap: var(--space-3);
+  background-color: #000;
   color: #fff;
   border-radius: var(--radius-md);
-  padding: 12px 20px;
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
+  padding: 12px 22px;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: 1px solid #333;
 }
 
 .store-btn:hover {
-  background-color: #000;
+  background-color: #222;
   color: #fff;
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
-.store-btn svg {
+.store-btn-icon {
+  font-size: 26px;
+  line-height: 1;
   flex-shrink: 0;
 }
 
 .store-btn-label {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .store-btn-label small {
   font-size: 10px;
   font-weight: var(--font-normal);
-  opacity: 0.8;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.store-btn-label strong {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
 }
 
 /* ---- Steps (how it works) ---- */
