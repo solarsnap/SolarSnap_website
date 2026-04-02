@@ -41,7 +41,7 @@
     <div class="footer-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="contact.html">Contact</a>
-      <a href="mailto:hello@solarsnap.co.uk">hello@solarsnap.co.uk</a>
+      <a href="mailto:info@solarsnap.co.uk">info@solarsnap.co.uk</a>
     </div>
   </div>
 </footer>`;

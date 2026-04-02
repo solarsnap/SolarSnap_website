@@ -1,7 +1,7 @@
 // Vercel Serverless Function
 // POST /api/contact
 //
-// Forwards contact form submissions to hello@solarsnap.co.uk via email.
+// Forwards contact form submissions to info@solarsnap.co.uk via email.
 // Required environment variables (set in Vercel dashboard):
 //   RESEND_API_KEY   — API key from resend.com (or replace with your preferred email service)
 
@@ -30,7 +30,7 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'SolarSnap Website <noreply@solarsnap.co.uk>',
-        to:   ['hello@solarsnap.co.uk'],
+        to:   ['info@solarsnap.co.uk'],
         reply_to: email,
         subject: `[SolarSnap Contact] ${subject || 'General enquiry'} — from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
