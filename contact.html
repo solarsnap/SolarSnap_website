@@ -43,6 +43,7 @@
                   <option value="bug">Report a bug</option>
                   <option value="purchase">Purchase / billing</option>
                   <option value="commercial">Commercial licence</option>
+                  <option value="data-deletion">Request data deletion</option>
                   <option value="feedback">Feedback</option>
                   <option value="other">Other</option>
                 </select>
@@ -113,6 +114,17 @@
 
   <script src="components.js"></script>
   <script>
+    // Pre-select subject from URL query string (e.g. ?subject=data-deletion)
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const subject = params.get('subject');
+      if (subject) {
+        const select = document.getElementById('subject');
+        const option = select.querySelector(`option[value="${CSS.escape(subject)}"]`);
+        if (option) select.value = subject;
+      }
+    })();
+
     document.getElementById('contact-form').addEventListener('submit', async function (e) {
       e.preventDefault();
 
