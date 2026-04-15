@@ -36,62 +36,40 @@
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Card stack */
-    .card-stack-wrapper {
+    /* Static symmetrical card fan */
+    .card-fan-wrapper {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-4);
+      align-items: flex-end;
+      padding-bottom: var(--space-8);
     }
 
-    .card-stack {
+    .card-fan {
       position: relative;
-      width: 210px;
-      height: 430px;
+      width: 460px;
+      height: 340px;
     }
 
-    .stack-card-wrap {
+    .fan-card {
       position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
-                  box-shadow 0.3s ease;
-      cursor: pointer;
-      transform-origin: bottom center;
-    }
-
-    .stack-card-wrap img {
-      width: 200px;
-      border-radius: 24px;
+      bottom: 0;
+      left: calc(50% - 80px); /* centre each card (half of 160px width) */
+      width: 160px;
+      border-radius: 20px;
       box-shadow: 0 8px 28px rgba(0,0,0,0.18);
       display: block;
-      pointer-events: none;
+      transform-origin: bottom center;
       user-select: none;
     }
 
-    /* Rest positions — front card (index 0) is on top */
-    .stack-card-wrap:nth-child(1) { z-index: 4; transform: rotate(-1deg); }
-    .stack-card-wrap:nth-child(2) { z-index: 3; transform: translateX(30px) translateY(8px)  rotate(7deg);  }
-    .stack-card-wrap:nth-child(3) { z-index: 2; transform: translateX(60px) translateY(16px) rotate(15deg); }
-    .stack-card-wrap:nth-child(4) { z-index: 1; transform: translateX(90px) translateY(24px) rotate(23deg); }
-
-    /* Individual card hover — tilt toward viewer */
-    .stack-card-wrap.hovered {
-      z-index: 10 !important;
-      box-shadow: 0 20px 48px rgba(0,0,0,0.25);
-    }
-    .stack-card-wrap:nth-child(1).hovered { transform: rotate(-45deg) translateY(-24px) scale(1.04); }
-    .stack-card-wrap:nth-child(2).hovered { transform: translateX(30px) rotate(-45deg) translateY(-24px) scale(1.04); }
-    .stack-card-wrap:nth-child(3).hovered { transform: translateX(60px) rotate(45deg)  translateY(-24px) scale(1.04); }
-    .stack-card-wrap:nth-child(4).hovered { transform: translateX(90px) rotate(45deg)  translateY(-24px) scale(1.04); }
+    .fan-card:nth-child(1) { transform: rotate(-26deg); z-index: 1; }
+    .fan-card:nth-child(2) { transform: rotate(-9deg);  z-index: 3; }
+    .fan-card:nth-child(3) { transform: rotate(9deg);   z-index: 4; }
+    .fan-card:nth-child(4) { transform: rotate(26deg);  z-index: 2; }
 
     @media (max-width: 768px) {
-      .card-stack-wrapper { padding: var(--space-4); }
-      .card-stack { width: 170px; height: 350px; }
-      .stack-card-wrap img { width: 160px; }
-      .stack-card-wrap:nth-child(2) { transform: translateX(22px) translateY(6px)  rotate(7deg);  }
-      .stack-card-wrap:nth-child(3) { transform: translateX(44px) translateY(12px) rotate(15deg); }
-      .stack-card-wrap:nth-child(4) { transform: translateX(66px) translateY(18px) rotate(23deg); }
+      .card-fan { width: 320px; height: 240px; }
+      .fan-card  { width: 110px; left: calc(50% - 55px); }
     }
   </style>
 </head>
@@ -125,21 +103,12 @@
             </a>
           </div>
         </div>
-        <div class="card-stack-wrapper">
-          <div class="card-stack" aria-label="SolarSnap app screenshots">
-            <!-- Front card first in DOM, subsequent cards stack behind -->
-            <div class="stack-card-wrap">
-              <img src="assets/screen-home.png" alt="SolarSnap home screen">
-            </div>
-            <div class="stack-card-wrap">
-              <img src="assets/screen-assess.png" alt="SolarSnap camera assessment screen">
-            </div>
-            <div class="stack-card-wrap">
-              <img src="assets/screen-result-basic.png" alt="SolarSnap free result showing Excellent solar suitability">
-            </div>
-            <div class="stack-card-wrap">
-              <img src="assets/screen-result-premium.png" alt="SolarSnap premium yield report with annual energy data">
-            </div>
+        <div class="card-fan-wrapper">
+          <div class="card-fan" aria-label="SolarSnap app screenshots">
+            <img class="fan-card" src="assets/screen-result-premium.png" alt="SolarSnap premium yield report">
+            <img class="fan-card" src="assets/screen-assess.png"         alt="SolarSnap camera assessment screen">
+            <img class="fan-card" src="assets/screen-result-basic.png"   alt="SolarSnap suitability result">
+            <img class="fan-card" src="assets/screen-home.png"           alt="SolarSnap home screen">
           </div>
         </div>
       </div>
@@ -209,11 +178,5 @@
   <div id="site-footer"></div>
 
   <script src="components.js"></script>
-  <script>
-    document.querySelectorAll('.stack-card-wrap').forEach(card => {
-      card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-      card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
-    });
-  </script>
 </body>
 </html>
