@@ -7,13 +7,14 @@
 //   supabase functions deploy stripe-webhook
 //
 // Required Supabase secrets (set via `supabase secrets set`):
-//   STRIPE_SECRET_KEY          — Stripe secret key
-//   STRIPE_WEBHOOK_SECRET      — Stripe webhook signing secret (whsec_…)
-//   SUPABASE_URL               — Your Supabase project URL
-//   SUPABASE_SERVICE_ROLE_KEY  — Supabase service role key (NOT the anon key)
+//   STRIPE_SECRET_KEY       — Stripe secret key
+//   STRIPE_WEBHOOK_SECRET   — Stripe webhook signing secret (whsec_…)
+//
+// Note: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are automatically
+// injected by Supabase — do not set these manually.
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
-import Stripe from 'https://esm.sh/stripe@14.21.0?target=deno';
+import Stripe from 'https://esm.sh/stripe@12.18.0?target=deno&no-check=true';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY')!, {
@@ -86,9 +87,8 @@ serve(async (req: Request) => {
     const { error: updateError } = await supabase
       .from('profiles')
       .update({
-        licence_type: 'commercial',
-        commercial_licence_granted_at: new Date().toISOString(),
-        commercial_stripe_session_id: session.id,
+        licence_tier: 'commercial',
+        updated_at: new Date().toISOString(),
       })
       .eq('id', user.id);
 
