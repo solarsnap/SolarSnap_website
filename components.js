@@ -52,7 +52,7 @@
     <button class="modal-close js-modal-close" aria-label="Close">&times;</button>
     <div class="modal-icon">☀️</div>
     <h2 class="modal-title" id="modal-title">Be the first to know</h2>
-    <p class="modal-body">SolarSnap is launching on iOS and Android soon. Drop your email below and we'll notify you the moment it's live.</p>
+    <p class="modal-body">SolarSnap is available now on Android. Drop your email below and we'll notify you the moment the iOS version is live.</p>
     <form id="notify-form" novalidate>
       <div class="modal-input-row">
         <input type="email" id="notify-email" placeholder="your@email.com" required autocomplete="email">
@@ -105,8 +105,8 @@
       return;
     }
 
-    // Open modal — any store button or download trigger
-    if (e.target.closest('.js-notify-trigger, .store-btn')) {
+    // Open modal — App Store button or download trigger (not Google Play, which is live)
+    if (e.target.closest('.js-notify-trigger, .store-btn:not(.js-play-store)')) {
       e.preventDefault();
       openModal();
       return;
