@@ -361,6 +361,25 @@ a:hover {
 
 /* ---- Store buttons ---- */
 
+/* Official Google Play badge image */
+.play-store-badge {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 0; /* collapse whitespace around img */
+}
+
+.play-store-badge img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.play-store-badge:hover img {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
 .store-btn {
   display: inline-flex;
   align-items: center;
