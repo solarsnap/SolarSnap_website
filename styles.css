@@ -361,13 +361,15 @@ a:hover {
 
 /* ---- Store buttons ---- */
 
-/* Official Google Play badge image */
-.play-store-badge {
+/* Official store badges */
+.play-store-badge,
+.app-store-badge {
   display: inline-block;
   text-decoration: none;
-  line-height: 0; /* collapse whitespace around img */
+  line-height: 0;
 }
 
+/* Google Play badge has internal padding in the image; nudge height up slightly */
 .play-store-badge img {
   height: 58px;
   width: auto;
@@ -375,7 +377,16 @@ a:hover {
   transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
-.play-store-badge:hover img {
+/* Apple badge has no internal padding — match visual height to Google Play */
+.app-store-badge img {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.play-store-badge:hover img,
+.app-store-badge:hover img {
   opacity: 0.85;
   transform: translateY(-1px);
 }
