@@ -1101,6 +1101,58 @@ a:hover {
   color: var(--color-text-secondary);
 }
 
+/* ---- Related articles ---- */
+
+.related-articles {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: var(--border-thin);
+}
+
+.related-articles h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.related-card {
+  background: var(--card-bg);
+  border: var(--border-thin);
+  border-radius: var(--card-radius);
+  padding: var(--space-5);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.related-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.related-card-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .related-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Article table ---- */
+
 .article-body table {
   width: 100%;
   border-collapse: collapse;

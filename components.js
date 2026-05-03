@@ -45,6 +45,7 @@
   <div class="container">
     <p class="footer-copy">&copy; ${new Date().getFullYear()} SolarSnap. All rights reserved.</p>
     <div class="footer-links">
+      <a href="/blog/">Blog</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/contact.html">Contact</a>
       <a href="mailto:info@solarsnap.co.uk">info@solarsnap.co.uk</a>
