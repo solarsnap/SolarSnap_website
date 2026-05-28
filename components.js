@@ -47,6 +47,7 @@
     <p class="footer-copy">&copy; ${new Date().getFullYear()} SolarSnap. All rights reserved.</p>
     <div class="footer-links">
       <a href="/blog/">Blog</a>
+      <a href="/faq.html">FAQ</a>
       <a href="/recommended-products.html">Recommended Products</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/contact.html">Contact</a>
